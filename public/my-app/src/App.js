@@ -18,8 +18,9 @@ function App() {
           Learn React
         </a>
       </header>
+      <footer style={{backgroundColor:"white",position:"block"}}>hello</footer>
     </div>
   );
 }
-//cox
+
 export default App;
