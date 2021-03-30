@@ -1,12 +1,15 @@
 import React from 'react';
-import { Button } from '@material-ui/core';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import './App.css';
+import Home from "./components/"
 
 function App() {
-  return (
-    <div className="App">
-  <Button color="primary">Hello World</Button>;
-    </div>
+
+  return(
+    <>
+    <CssBaseline/>
+    <Home />
+    </>
   );
 }
 
