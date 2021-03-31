@@ -1,5 +1,6 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { makeStyles } from '@material-ui/core/styles';
+import ResponsiveMenu from "@material-ui/core/Drawer"
 import {
     AppBar,
     Toolbar,
@@ -14,7 +15,7 @@ import {
     Box
 } from "@material-ui/core"
 import {
-    ArrowBack,
+    Menu,
     Work,
     Description,
     GitHub,
@@ -35,6 +36,13 @@ const useStyles = makeStyles(theme=>({
         margin: "1rem auto",
         width:theme.spacing(15),
         height:theme.spacing(15)
+    },
+    menuText:{
+        color: "#023047",
+        fontWeight: "bold"
+    },
+    positionZindex:{
+        zIndex: 0
     }
 }));
 
@@ -45,18 +53,18 @@ const useStyles = makeStyles(theme=>({
 const menuComponents = [
     {
         listIcon: <Description/>,
-        listText: "Breif Description"
+        listText: "Brief Description"
     },
     {
-        listIcon: <Work/>,
+        listIcon: <Work />,
         listText: "Experience"
     },
     {
-        listIcon: <GitHub/>,
+        listIcon: <GitHub />,
         listText: "Personal Projects"
     },
     {
-        listIcon: <ContactMail/>,
+        listIcon: <ContactMail />,
         listText: "Contacts"
     }
 ]
@@ -65,35 +73,47 @@ const menuComponents = [
 
 
 const Navbar = () => {
+    const [state, setState] = useState({
+       left: false,
+       zIndex: 100
+    })
+
+    const toggleSliderMenu = ((slider, open)=>()=>{
+        setState({...state,[slider]:open});
+    });
+
     const classes = useStyles()
-    return (
-        <>
+
+    const sideList = slider =>(
         <Box className={classes.sliderContainer} component="pic-wrapper">
         <Avatar className={classes.avatar} src={avatar} alt="Munteanu Cristian" />
         <Divider/>
         <List>
             {menuComponents.map((lsItem,key)=>(
             <ListItem button key={key}>
-                <ListItemIcon>
+                <ListItemIcon className={classes.menuText}>
                     {lsItem.listIcon}
                 </ListItemIcon> 
-                <ListItemText primary={lsItem.listText}/>
-
+                <ListItemText className={classes.menuText} primary={lsItem.listText}/>
                 </ListItem>
-            ))}
-            
-
+            ))}          
         </List>
         </Box>
+    )
+    return (
+        <>
         <Box component="nav">
             <AppBar position="static" style={{background: "#8ECAE6"}}>
                 <Toolbar>
                     <IconButton>
-                         <ArrowBack style={{color: "#023047"}}/>
+                         <Menu style={{color: "#023047"}}/>
                     </IconButton>
-                    <Typography variant="h5" style={{color: "#023047"}}> 
+                    <Typography className={classes.positionZindex} variant="h5" style={{color: "#023047"}}> 
                     Munteanu Cristian Personal CV
                     </Typography>
+                    <ResponsiveMenu open={state.left}>
+                        {sideList("left")}
+                    </ResponsiveMenu>
                 </Toolbar>
             </AppBar>
         </Box>
