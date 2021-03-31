@@ -5,6 +5,7 @@ import {
     Toolbar,
     ListItem,
     IconButton,
+    ListItemIcon,
     ListItemText,
     Avatar,
     Divider,
@@ -14,30 +15,75 @@ import {
 } from "@material-ui/core"
 import {
     ArrowBack,
-    AssignmentInd,
-    Home,
-    Apps,
+    Work,
+    Description,
+    GitHub,
     ContactMail
 
 } from "@material-ui/icons"
 import avatar from "../profilepic.jpg"
 
 //-------------------------------CSS-Section-Start-------------------------------//
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme=>({
     sliderContainer:{
         width: 350,
-        height: 5000,
+        height: "30rem",
         background: "#023047"
+    },
+    avatar:{
+        display:"block", 
+        margin: "1rem auto",
+        width:theme.spacing(15),
+        height:theme.spacing(15)
     }
-})
+}));
+
 //-------------------------------CSS-Section-End-------------------------------//
 
+//-------------------------------Menu-Section-Start-------------------------------//
+
+const menuComponents = [
+    {
+        listIcon: <Description/>,
+        listText: "Breif Description"
+    },
+    {
+        listIcon: <Work/>,
+        listText: "Experience"
+    },
+    {
+        listIcon: <GitHub/>,
+        listText: "Personal Projects"
+    },
+    {
+        listIcon: <ContactMail/>,
+        listText: "Contacts"
+    }
+]
+
+//-------------------------------Menu-Section-End-------------------------------//
+
+
 const Navbar = () => {
-    const classes = useStyles();
+    const classes = useStyles()
     return (
         <>
         <Box className={classes.sliderContainer} component="pic-wrapper">
-        <Avatar src={avatar} alt="Munteanu Cristian" />
+        <Avatar className={classes.avatar} src={avatar} alt="Munteanu Cristian" />
+        <Divider/>
+        <List>
+            {menuComponents.map((lsItem,key)=>(
+            <ListItem button key={key}>
+                <ListItemIcon>
+                    {lsItem.listIcon}
+                </ListItemIcon> 
+                <ListItemText primary={lsItem.listText}/>
+
+                </ListItem>
+            ))}
+            
+
+        </List>
         </Box>
         <Box component="nav">
             <AppBar position="static" style={{background: "#8ECAE6"}}>
