@@ -129,7 +129,7 @@ const Navbar = () => {
     return (
         <>
         <Box className={styles.positionZindex} component="nav">
-            <AppBar className={styles.positionZindex} position="static" style={{background: "#219ebc"}}>
+            <AppBar className={styles.positionZindex} position="static" style={{background: "#8ecae6"}}>
                 <Toolbar>
                     <IconButton onClick={toggleSliderMenu("left",true)}>
                          <Menu style={{color: "#023047"}}/>
