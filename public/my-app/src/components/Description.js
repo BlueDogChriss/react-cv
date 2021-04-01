@@ -17,8 +17,9 @@ import hobbies from "../images/hobbies.jpg"
 
 const useStyles = makeStyles({
     root: {
-      maxWidth: 450,
-      background:"whitesmoke"
+      maxWidth: 500,
+      background:"whitesmoke",
+      marginTop:"2rem"
     },
     media: {
       height: 140,
@@ -26,12 +27,12 @@ const useStyles = makeStyles({
     titluIdk:{
       color: "#023047",
       fontWeight: "bold",
-      paddingTop:"5rem"
+      paddingTop:"2rem"
     },
     gridContainer:{
       paddingLeft:"30px",
       paddingRight:"30px",
-      paddingTop:"5rem"
+      paddingTop:"2rem"
     },
     titleColor: {
       color:"#fb8500",
@@ -63,7 +64,7 @@ const Description = () => {
             <Typography variant="h3" align="center" className={classes.titluIdk}>Brief Description</Typography>
         </Box>
         <Box>
-            <Grid container spacing={6} className={classes.gridContainer} align="center"> 
+            <Grid container spacing={12} className={classes.gridContainer} align="center"> 
             <Grid item sm={6} md={6}>
         <Card className={classes.root}>
       <CardActionArea>

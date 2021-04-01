@@ -7,6 +7,9 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import ListItemText from "@material-ui/core/ListItemText";
 import Divider from "@material-ui/core/Divider";
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardContent from '@material-ui/core/CardContent';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -14,9 +17,30 @@ const useStyles = makeStyles((theme) => ({
         // maxWidth: '36ch',
         backgroundColor: theme.palette.background.paper,
     },
+    card:{
+        maxWidth: 550,
+        position:"absolute",
+        background:"#8ecae6",
+        top:"50%",
+        left:"50%",
+        transform:"translate(-50%, -50%)",
+        width:"100vw",
+        textAlign:"center", 
+    },
     inline: {
         display: 'inline',
+        color:"#fb8500"
     },
+    titlePage:{
+        color:"#023047",
+        textAlign: 'center',
+        fontWeight:"bold",
+        paddingTop: "5rem"
+    },
+    name:{
+        fontWeight:"bold",
+        color:"#023047"
+    }
 }));
 
 export default function GitHubUser() {
@@ -30,14 +54,18 @@ export default function GitHubUser() {
             .then(response => response.json())
             .then(data => setRepos(data));
     }, [userName]);
-
+//#8ecae6
+//#219ebc
+//#023047
+//#ffb703
+//#fb8500
     const listItems = repos.map((repo) =>
         <Fragment>
             <ListItem alignItems="flex-start">
                 <ListItemAvatar>
                     <Avatar alt={repo.owner.login} src={repo.owner.avatar_url} />
                 </ListItemAvatar>
-                <ListItemText
+                <ListItemText className={classes.name}
                     primary={repo.name}
                     secondary={
                         <React.Fragment>
@@ -45,11 +73,9 @@ export default function GitHubUser() {
                                 component="span"
                                 variant="body2"
                                 className={classes.inline}
-                                color="textPrimary"
                             >
                                 {repo.owner.login}
                             </Typography>
-                            {" — " + repo.description}
                         </React.Fragment>
                     }
                 />
@@ -60,10 +86,17 @@ export default function GitHubUser() {
 
     return (
         <div>
-            <Typography variant="h4" align="left">
-                GitHub Repos
+            <Typography variant="h4" align="left" className={classes.titlePage}>
+                GitHub Projects
             </Typography>
+            <Card className={classes.card}>
+                <CardActionArea>
+                <CardContent>
             <List className={classes.root}>{listItems}</List>
+            </CardContent>
+            </CardActionArea>
+            </Card>
+            
         </div>
     );
 }
