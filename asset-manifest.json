@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/react-cv/static/css/main.afd7172b.chunk.css",
+    "main.js": "/react-cv/static/js/main.79339739.chunk.js",
+    "main.js.map": "/react-cv/static/js/main.79339739.chunk.js.map",
+    "runtime-main.js": "/react-cv/static/js/runtime-main.5fa3a59f.js",
+    "runtime-main.js.map": "/react-cv/static/js/runtime-main.5fa3a59f.js.map",
+    "static/js/2.f17d9652.chunk.js": "/react-cv/static/js/2.f17d9652.chunk.js",
+    "static/js/2.f17d9652.chunk.js.map": "/react-cv/static/js/2.f17d9652.chunk.js.map",
+    "static/js/3.853ba877.chunk.js": "/react-cv/static/js/3.853ba877.chunk.js",
+    "static/js/3.853ba877.chunk.js.map": "/react-cv/static/js/3.853ba877.chunk.js.map",
+    "index.html": "/react-cv/index.html",
+    "static/css/main.afd7172b.chunk.css.map": "/react-cv/static/css/main.afd7172b.chunk.css.map",
+    "static/js/2.f17d9652.chunk.js.LICENSE.txt": "/react-cv/static/js/2.f17d9652.chunk.js.LICENSE.txt",
+    "static/media/contact.d23ba3e4.jpg": "/react-cv/static/media/contact.d23ba3e4.jpg",
+    "static/media/hardskils.069848bd.jpg": "/react-cv/static/media/hardskils.069848bd.jpg",
+    "static/media/hobbies.60b703d7.jpg": "/react-cv/static/media/hobbies.60b703d7.jpg",
+    "static/media/language.12d835c9.jpg": "/react-cv/static/media/language.12d835c9.jpg",
+    "static/media/profilepic.7dddbee4.jpg": "/react-cv/static/media/profilepic.7dddbee4.jpg",
+    "static/media/raccoon_logo.396be973.png": "/react-cv/static/media/raccoon_logo.396be973.png",
+    "static/media/softskils.4fbe093b.jpg": "/react-cv/static/media/softskils.4fbe093b.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5fa3a59f.js",
+    "static/js/2.f17d9652.chunk.js",
+    "static/css/main.afd7172b.chunk.css",
+    "static/js/main.79339739.chunk.js"
+  ]
+}
