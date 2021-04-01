@@ -116,17 +116,6 @@ const Description = () => {
           <Typography variant="body1" className={classes.subTitleColor} component="p">
           A personal goal of mine is to learna lot of things about programingand Web Development .Additionally, I like to t
 each peopleand learn from others. I want tobroaden my knowledge as muchas I can while I am still young.          </Typography>
-          {/* <Typography variant="body2" component="p">
-          Faculty of Economic Cybernetics, Statisticsand Informatics
-          Specialization -
-          Economic Informatics
-          </Typography>
-          <Typography variant="body1" className={classes.subTitleColor} component="p">
-          10/09/2015-25/05/2019: "Ion C. Brătianu"
-          </Typography>
-          <Typography variant="body2" component="p">
-          Specialization: - Natural Science
-          </Typography> */}
         </CardContent>
       </CardActionArea>
       <CardActions>
