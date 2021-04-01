@@ -8,7 +8,6 @@ import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import ListItemText from "@material-ui/core/ListItemText";
 import Divider from "@material-ui/core/Divider";
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 
 const useStyles = makeStyles((theme) => ({
@@ -90,11 +89,11 @@ export default function GitHubUser() {
                 GitHub Projects
             </Typography>
             <Card className={classes.card}>
-                <CardActionArea>
+           
                 <CardContent>
             <List className={classes.root}>{listItems}</List>
             </CardContent>
-            </CardActionArea>
+            
             </Card>
             
         </div>
