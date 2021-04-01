@@ -26,10 +26,9 @@ import avatar from "../profilepic.jpg"
 
 //-------------------------------CSS-Section-Start-------------------------------//
 const useStyles = makeStyles(theme=>({
-    sliderContainer:{
-        width: 350,
-        height: "30rem",
-        background: "#023047"
+    menuSliderWrapper:{
+        width: 250,
+        height: "100%"
     },
     avatar:{
         display:"block", 
@@ -43,14 +42,18 @@ const useStyles = makeStyles(theme=>({
     },
     positionZindex:{
         zIndex: 0
-    }
+    },
 }));
 
 //-------------------------------CSS-Section-End-------------------------------//
 
 //-------------------------------Menu-Section-Start-------------------------------//
 
-const menuComponents = [
+const menuComponents = [ 
+    {
+        listIcon: <Home/>,
+        listText:"Main Page"
+    },
     {
         listIcon: <Description/>,
         listText: "Brief Description"
@@ -82,19 +85,20 @@ const Navbar = () => {
         setState({...state,[slider]:open});
     });
 
-    const classes = useStyles()
+    const styles = useStyles()
 
     const sideList = slider =>(
-        <Box className={classes.sliderContainer} component="pic-wrapper">
-        <Avatar className={classes.avatar} src={avatar} alt="Munteanu Cristian" />
+        <Box className={styles.menuSliderWrapper} component="pic-wrapper"
+        onClick={toggleSliderMenu(slider, false)}>
+        <Avatar className={styles.avatar} src={avatar} alt="Munteanu Cristian" />
         <Divider/>
         <List>
             {menuComponents.map((lsItem,key)=>(
             <ListItem button key={key}>
-                <ListItemIcon className={classes.menuText}>
+                <ListItemIcon className={styles.menuText}>
                     {lsItem.listIcon}
                 </ListItemIcon> 
-                <ListItemText className={classes.menuText} primary={lsItem.listText}/>
+                <ListItemText className={styles.menuText} primary={lsItem.listText}/>
                 </ListItem>
             ))}          
         </List>
@@ -105,13 +109,16 @@ const Navbar = () => {
         <Box component="nav">
             <AppBar position="static" style={{background: "#8ECAE6"}}>
                 <Toolbar>
-                    <IconButton>
+                    <IconButton onClick={toggleSliderMenu("left",true)}>
                          <Menu style={{color: "#023047"}}/>
                     </IconButton>
-                    <Typography className={classes.positionZindex} variant="h5" style={{color: "#023047"}}> 
+                    <Typography className={styles.positionZindex} variant="h5" style={{color: "#023047"}}> 
                     Munteanu Cristian Personal CV
                     </Typography>
-                    <ResponsiveMenu open={state.left}>
+                    <ResponsiveMenu 
+                    anchor="left"
+                    open={state.left}
+                    onClose={toggleSliderMenu("left",false)}>
                         {sideList("left")}
                     </ResponsiveMenu>
                 </Toolbar>
