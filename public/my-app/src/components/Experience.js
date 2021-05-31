@@ -117,7 +117,7 @@ const Experience = () => {
         <TimelineContent>
           <Paper elevation={3} className={classes.paper}>
             <Typography variant="h6" component="h1" className={classes.name}>
-            11/07/2020 - Present
+            11/07/2020 - 11/05/2021
             </Typography>
             <Typography className={classes.jobTitle}>SiSC - Sindicatul Studenților dinCibernetică
 Head of the IT Department</Typography>

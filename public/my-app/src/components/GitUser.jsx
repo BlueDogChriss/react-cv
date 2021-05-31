@@ -17,10 +17,11 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: theme.palette.background.paper,
     },
     card:{
+        maxHeight: '80vh',
         maxWidth: 550,
         position:"absolute",
         background:"#8ecae6",
-        top:"50%",
+        top:"55%",
         left:"50%",
         transform:"translate(-50%, -50%)",
         width:"100vw",
